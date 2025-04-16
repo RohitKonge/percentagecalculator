@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /index.html
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.yourwebsite.com/sitemap.xml 
