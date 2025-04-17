@@ -294,4 +294,186 @@ footer nav a:hover {
     .subtitle {
         font-size: 16px;
     }
-} 
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 10px;
+}
+.hamburger span {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: #3a7bd5;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 1000;
+}
+.mobile-nav.open {
+  display: block;
+}
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav li {
+  border-bottom: 1px solid #eee;
+}
+.mobile-nav li:last-child {
+  border-bottom: none;
+}
+.mobile-nav a {
+  display: block;
+  padding: 18px 24px;
+  color: #3a7bd5;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  min-width: 48px;
+  min-height: 48px;
+}
+.mobile-nav a:active,
+.mobile-nav a:focus {
+  background: #f0f6ff;
+}
+
+@media (max-width: 900px) {
+  body {
+    max-width: 100vw;
+    padding: 4vw;
+  }
+  header {
+    flex-direction: row;
+    position: relative;
+  }
+  .logo {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .mobile-nav.open {
+    display: block;
+  }
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .logo {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 1.1rem;
+    margin-right: auto;
+  }
+  nav {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2vw;
+  }
+  .calculator-section {
+    padding: 5vw 3vw;
+    margin-bottom: 4vw;
+  }
+  .calculator-row, .block-row {
+    gap: 4vw;
+  }
+  .input-field, .result-field {
+    font-size: 1rem;
+    padding: 12px 2vw;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .calculate-btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .tips {
+    font-size: 0.95rem;
+    padding: 3vw;
+  }
+  .content-section h2 {
+    font-size: 1.2rem;
+  }
+  .content-section h3 {
+    font-size: 1.05rem;
+  }
+  .content-section p, .content-section li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+  .calculate-btn {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+button, .calculate-btn, .input-field, .result-field, .mobile-nav a {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}

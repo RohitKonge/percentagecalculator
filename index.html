@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Percentage Calculator - Free Online Tool for All Percentage Calculations</title>
     <meta name="description" content="Free online percentage calculator with multiple calculation types. Calculate what percentage one number is of another, find percentages of values, and determine percentage increases or decreases instantly.">
     <meta name="keywords" content="percentage calculator, calculate percentage, percent calculator, percentage increase calculator, percentage decrease, percentage change, percentage conversion, math tool">
@@ -52,8 +52,19 @@
 </head>
 <body>
     <header>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span></span><span></span><span></span>
+        </button>
         <div class="logo" aria-label="Percentage symbol">%</div>
         <h1>Advanced Percentage Calculator</h1>
+        <nav id="mobile-nav" class="mobile-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#calc-section-1">Basic</a></li>
+                <li><a href="#calc-section-2">Ratio</a></li>
+                <li><a href="#calc-section-3">Change</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
     
     <p class="subtitle">Your comprehensive free online tool for accurate percentage calculations. Faster, easier, and more versatile than other calculators.</p>
@@ -198,5 +209,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function() {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+        mobileNav.classList.toggle('open');
+    });
+    // Close nav on link click (mobile)
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+        });
+    });
+    </script>
 </body>
 </html>
