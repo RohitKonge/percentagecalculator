@@ -6,4 +6,4 @@ Allow: /index.html
 Allow: /sitemap.xml
 
 # Sitemap location
-Sitemap: https://www.yourwebsite.com/sitemap.xml 
+Sitemap: https://percentagecalculator.ltd/sitemap.xml
