@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+Allow: /*.html$
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Optimize crawl rate
+Crawl-delay: 1
 
 # Important pages
 Allow: /index.html
@@ -7,3 +17,15 @@ Allow: /sitemap.xml
 
 # Sitemap location
 Sitemap: https://percentagecalculator.ltd/sitemap.xml
+
+# Block potentially problematic crawlers
+User-agent: PetalBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Allow Google crawler full access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
